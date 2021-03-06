@@ -40,17 +40,11 @@ public class Recebivel {
 
     @Override
     public String toString() {
-
-        return new StringBuilder()
-                .append("{")
-                .append(this.status)
-                .append(VIRGULA)
-                .append(this.valorOriginal)
-                .append(VIRGULA)
-                .append(this.valorReceber)
-                .append(VIRGULA)
-                .append(this.dataTransacao)
-                .append("}")
-                .toString();
+        return "Recebivel{" +
+                "status='" + status + '\'' +
+                ", dataTransacao='" + dataTransacao + '\'' +
+                ", valorOriginal=" + valorOriginal +
+                ", valorReceber=" + valorReceber +
+                '}';
     }
 }

@@ -75,7 +75,7 @@ public class Solucao {
     }
 
     private Recebivel obterRecebivelCredito(final DadosTransacao dadosTransacao) {
-        final String status = "aguardando_liberacao_fundos";
+        final String status = "aguardando_pagamento";
         final String dataTransacao = DateUtils.converterFormato(LocalDate.now().plusDays(30L), FORMATO_BRASILEIRO);
         final BigDecimal valorOriginal = dadosTransacao.valor;
         final BigDecimal valorReceber = CalculaRecebivelUtils.calcular(dadosTransacao);
