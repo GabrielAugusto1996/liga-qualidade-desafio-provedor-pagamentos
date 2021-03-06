@@ -1,11 +1,9 @@
 package br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.modifique;
 
-import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.modifique.converter.DadosRecebimentoAdiantadoConverter;
 import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.modifique.converter.DadosTransacaoConverter;
 import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.modifique.models.Recebivel;
 import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.modifique.utils.CalculaRecebivelUtils;
 import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.modifique.utils.DateUtils;
-import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.pronto.DadosRecebimentoAdiantado;
 import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.pronto.DadosTransacao;
 import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.pronto.MetodoPagamento;
 
@@ -17,14 +15,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
-import java.util.stream.Collectors;
 
 import static br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.modifique.utils.DateUtils.FORMATO_BRASILEIRO;
 import static java.util.stream.Collectors.toList;
 
 public class Solucao {
 
-    private static Map<MetodoPagamento, BiFunction<Solucao, DadosTransacao, Recebivel>> mapFunction = new HashMap<>();
+    private static final Map<MetodoPagamento, BiFunction<Solucao, DadosTransacao, Recebivel>> mapFunction = new HashMap<>();
 
     public Solucao() {
         mapFunction.put(MetodoPagamento.DEBITO, Solucao::obterRecebivelDebito);
